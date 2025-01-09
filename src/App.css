@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 10px;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  background: #fff;
+  padding: 25px 40px 10px 40px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container .text {
+  text-align: center;
+  font-size: 41px;
+  font-weight: 600;
+  background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.container form {
+  padding: 30px 0 0 0;
+}
+
+.container form .form-row {
+  display: flex;
+  flex-wrap: wrap; /* Garante que os itens possam se empilhar em telas menores */
+  margin: 32px 0;
+}
+
+form .form-row .input-data {
+  width: 100%; /* Garante que os campos de entrada ocupem toda a largura disponível */
+  margin: 10px 0; /* Remove o espaçamento excessivo entre os campos */
+  position: relative;
+}
+
+form .form-row .textarea {
+  height: 70px;
+}
+
+.input-data input,
+.textarea textarea {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-size: 17px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+}
+
+.input-data input:focus ~ label,
+.textarea textarea:focus ~ label,
+.input-data input:valid ~ label,
+.textarea textarea:valid ~ label {
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: #3498db;
+}
+
+.textarea textarea {
+  resize: none;
+  padding-top: 10px;
+}
+
+.input-data label {
+  position: absolute;
+  pointer-events: none;
+  bottom: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.textarea label {
+  width: 100%;
+  bottom: 40px;
+  background: #fff;
+}
+
+.input-data .underline {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+}
+
+.input-data .underline:before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: #3498db;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.input-data input:focus ~ .underline:before,
+.input-data input:valid ~ .underline:before,
+.textarea textarea:focus ~ .underline:before,
+.textarea textarea:valid ~ .underline:before {
+  transform: scale(1);
+}
+
+.input-data select {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-size: 17px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+  background: none;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.input-data select:focus ~ label,
+.input-data select:valid ~ label {
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: #3498db;
+}
+
+.input-data select ~ .underline {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+}
+
+.input-data select ~ .underline:before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: #3498db;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.input-data select:focus ~ .underline:before,
+.input-data select:valid ~ .underline:before {
+  transform: scale(1);
+}
+
+.coruja {
+  align-items: center;
+  align-content: center;
+}
+
+.coruja img {
+  max-width: 200px;
+  align-content: center;
+  position: relative;
+  align-items: center;
+}
+
+/* Container dos botões */
+.gerar {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+
+/* Media Queries para Responsividade */
+@media (max-width: 800px) {
+  .container {
+    padding: 20px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-row .input-data {
+    margin: 10px 0;
+  }
+
+  .input-data input, .textarea textarea {
+    font-size: 15px;
+  }
+
+  .input-data label {
+    font-size: 14px;
+  }
+
+  .input-data .inner button,
+  .form-row .input-data button {
+    width: 100%;
+    padding: 14px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  .container .text {
+    font-size: 28px;
+  }
+
+  .input-data input, .textarea textarea {
+    font-size: 14px;
+  }
+
+  .input-data label {
+    font-size: 13px;
+  }
+}
+/* Estilo para os botões */
+.input-data .inner button,
+.form-row .input-data button {
+  background-color: #56d8e4;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 15px 30px; /* Aumenta o espaçamento interno do botão */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s ease;
+  border-radius: 5px;
+  width: auto; /* Garante que a largura se ajuste ao conteúdo */
+  white-space: nowrap; /* Impede o texto de quebrar em várias linhas */
+  text-align: center; /* Centraliza o texto no botão */
+}
+
+.input-data .inner button:hover,
+.form-row .input-data button:hover {
+  background-color: #9f01ea;
+  transform: scale(1.05);
+}
+
